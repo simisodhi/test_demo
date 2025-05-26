@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://'github.com/simisodhi/test_demo.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Example: sh 'make build' or mvn clean install
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Example: sh 'pytest' or npm test
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Example: sh './deploy.sh'
+            }
+        }
+    }
+}
